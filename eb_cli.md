@@ -190,3 +190,75 @@ eb create --sample eb-testy-env
 eb deploy
 ```
 
+#### Test the app
+
+```
+eb open
+```
+
+
+#### Tag the code
+
+```
+davis@zatoichi:~/progs/eb_testy$ git tag -a v1.0 -m "my working 1.0 with default app"
+davis@zatoichi:~/progs/eb_testy$ git push origin v1.0
+Enumerating objects: 1, done.
+Counting objects: 100% (1/1), done.
+Writing objects: 100% (1/1), 184 bytes | 184.00 KiB/s, done.
+Total 1 (delta 0), reused 0 (delta 0), pack-reused 0
+To github.com:rtp-aws/eb_testy.git
+ * [new tag]         v1.0 -> v1.0
+```
+
+
+#### Migrate the goes pseudo binary code
+
+remove the exising code
+
+```
+davis@zatoichi:~/progs/eb_testy$ rm app.js 
+davis@zatoichi:~/progs/eb_testy$ rm -rf bin
+davis@zatoichi:~/progs/eb_testy$ rm -rf node_modules/
+davis@zatoichi:~/progs/eb_testy$ rm package*
+davis@zatoichi:~/progs/eb_testy$ rm -rf routes/
+davis@zatoichi:~/progs/eb_testy$ rm -rf public/
+davis@zatoichi:~/progs/eb_testy$ rm -rf views
+davis@zatoichi:~/progs/eb_testy$ ls
+eb_cli.md  eb_cli.md.backup  LICENSE  pyenv.md  README.md  setenv.sh
+davis@zatoichi:~/progs/eb_testy$ 
+```
+
+
+
+
+Add the goes binary code
+
+#### install the node modules
+
+```
+npm init -y
+npm install express
+# npm install --save-dev nodemon
+npm install @dendra-science/goes-pseudo-binary
+npm i ejs
+npm install -g browserify
+```
+
+#### test it locall
+
+```
+make
+node server.js start
+```
+
+
+#### configuring the static files
+
+Using this guide
+
+https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-staticfiles.html
+
+
+Add .ebextensions/static-files.config
+
+
