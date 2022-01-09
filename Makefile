@@ -5,6 +5,6 @@ runlocal:
 	npm run devStart
 
 deploy: public/js/bundle.js
-	gcloud app deploy 
+	eb deploy
 
 

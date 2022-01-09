@@ -261,4 +261,23 @@ https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-staticfil
 
 Add .ebextensions/static-files.config
 
+```
+davis@zatoichi:~/progs/eb_testy/.ebextensions$ cat static-files.config 
+option_settings:
+  aws:elasticbeanstalk:environment:proxy:staticfiles:
+    /public: statichtml
+    /imgs: staticimages
+```
+
+```
+git add --all
+git commit -m "wip"
+git push
+```
+
+```
+eb deploy
+```
+
+
 
