@@ -10,7 +10,7 @@ The second guide lists packages to install.  Modify to use these packages.
 ```
 sudo apt-get install -y make build-essential libssl-dev zlib1g-dev \
 libbz2-dev libreadline-dev libsqlite3-dev wget curl llvm libncurses5-dev \
-libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python-openssl3
+libncursesw5-dev xz-utils tk-dev libffi-dev liblzma-dev python3-openssl
 ```
 
 Furthermore, the second guide suggests using the pyenv-installer which is another repo in the pyenv user from git.
