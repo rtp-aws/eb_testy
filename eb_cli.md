@@ -16,6 +16,8 @@ sudo apt-get install build-essential zlib1g-dev libssl-dev libncurses-dev libffi
 
 ## obtaining eb cli
 
+https://github.com/aws/aws-elastic-beanstalk-cli-setup
+
 ```
 ./aws-elastic-beanstalk-cli-setup/scripts/bundled_installer
 ```
